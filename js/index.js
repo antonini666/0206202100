@@ -62,16 +62,19 @@ var addComment = function addComment() {
   if (text.value.trim().length > 0) {
     generateReviews(text.value);
   }
+
   commentNumbers.innerHTML = +commentNumbers.innerHTML + 1;
 };
 
 submit.addEventListener("click", function (e) {
   e.preventDefault();
   addComment();
+  text.value = "";
 });
 
 text.addEventListener("keydown", function (e) {
   if (e.keyCode == 13 && (e.metaKey || e.ctrlKey)) {
     addComment();
+    text.value = "";
   }
 });

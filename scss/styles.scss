@@ -7,16 +7,18 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  color: $primaryFontColor;
 }
 
 .container {
   max-width: 720px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .profile {
   position: relative;
+  padding-top: 25px;
 
   .container {
     display: flex;
@@ -49,10 +51,6 @@ body {
   &-photo {
     img {
       border-radius: 50%;
-
-      @media screen and (max-width: 529px) {
-        width: 144px;
-      }
     }
   }
 
@@ -61,7 +59,7 @@ body {
     font-size: $mediumFont;
     line-height: 20px;
     background: #fffbc8;
-    padding: 15px;
+    padding: 10px 10px 10px 0;
     border: 1px solid $borderColor;
     border-left: 0;
     border-top-right-radius: 5px;
@@ -81,12 +79,18 @@ body {
       border-bottom-left-radius: 5px;
     }
 
+    @media screen and (max-width: 600px) {
+      padding-right: 0;
+    }
+
     @media screen and (max-width: 480px) {
+      border: 1px solid $borderColor;
+      border-radius: 5px;
+      padding: 10px;
+
       &:before {
         content: none;
       }
-      border: 1px solid $borderColor;
-      border-radius: 5px;
     }
   }
 
@@ -154,7 +158,7 @@ body {
 }
 
 .reviews {
-  padding-top: 20px;
+  padding-top: 25px;
 
   &__top {
     display: flex;
@@ -254,6 +258,13 @@ body {
 
   &__add {
     background-color: #f2f2f2;
+
+    .add {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 28px;
+    }
   }
 
   &__field {
@@ -262,10 +273,10 @@ body {
     font-size: $mediumFont;
     font-family: Arial, Helvetica, sans-serif;
     padding: 4px;
+    resize: none;
   }
 
   &__sumbit {
-    display: block;
     font-size: $largeFont;
     color: #333333;
     font-weight: 700;
@@ -273,7 +284,20 @@ body {
     background-color: $btnColor;
     border: none;
     border-radius: 20px;
-    margin: 20px auto;
+    margin: 25px 0;
     cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: darken($color: $btnColor, $amount: 15);
+      color: $bodyBackground;
+      transition: 0.3s;
+    }
+    &:active {
+      background-color: darken($color: $btnColor, $amount: 25);
+      color: $bodyBackground;
+      transition: 0.3s;
+    }
   }
 }
