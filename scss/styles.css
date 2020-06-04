@@ -142,7 +142,7 @@ body {
 }
 
 .profile__services-list .item-title {
-  padding: 7px 0;
+  padding: 7px 5px;
   font-size: 14px;
   z-index: 0;
 }
